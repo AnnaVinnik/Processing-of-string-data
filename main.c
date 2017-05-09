@@ -1,17 +1,17 @@
 #include <stdio.h>
 
-int function(int *value)
+void input(char *array)
 {
+array[2] = '2';
 
-return value[1];
 
 }
 
 int main()
 {
-int value[5] = {}, k;
+char value[5] = {}, k;
 
-    k = function(value);
-printf("%d\n", k);
+input(value);
+printf("%c\n", value[2]);
     return 0;
 }
