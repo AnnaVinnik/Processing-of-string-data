@@ -4,11 +4,10 @@
 void input(char *arr)
 {
 int i;
-    printf("Введите путь (в конце пробел)\n");
-    for (i = 0;arr[i - 1] != ' ' ; i++){
+    printf("Введите путь \n");
+    for (i = 0;arr[i - 1] != 10 ; i++){
         arr[i] = getchar();
     }
-    arr[i - 1] = ' ';
 }
 
 void check(char *arr, int *rez)
@@ -78,6 +77,7 @@ int main()
 {
 char value[270] = {0};
 int k = -5, checkRez[2] = {-5, -5};
+printf("%d\n", '\0');
 
     input(value);
     substitution(value, 92, '/');//  92 = '\'
