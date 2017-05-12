@@ -4,11 +4,10 @@
 void input(char *arr)
 {
 int i;
-    printf("Введите путь (в конце пробел)\n");
-    for (i = 0;arr[i - 1] != ' ' ; i++){
+    printf("Введите путь \n");
+    for (i = 0;arr[i - 1] != 10 ; i++){
         arr[i] = getchar();
     }
-    arr[i - 1] = ' ';
 }
 
 void check(char *arr, int *rez)
@@ -53,7 +52,7 @@ int i;
 
 void print(char *arr)
 {
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; arr[i] != 10; i++){
         printf ("%c", arr[i]);
     }
     printf("\n");
@@ -74,14 +73,35 @@ int i;
     }
 }
 
+void ShiftTo(char *arr, int to, int since)
+{
+int i, j;
+     for (j = 0; j < to; j++){
+         for (i = since; i < 260 - since; i++){
+             arr[260 - i] = arr[260 - i - 1];
+         }
+     }
+
+}
+
+
+void add(char *arr, int since, char symbol)
+{
+   ShiftTo(arr, 1, since);
+   arr[since] = symbol;
+}
+
 int main()
 {
 char value[270] = {0};
 int k = -5, checkRez[2] = {-5, -5};
 
     input(value);
-    substitution(value, 92, '/');//  92 = '\'
-
+    delete(value, 0, 9);
+    up(value, 0);
+    add(value, 1, ':');
+    substitution(value, '/', 92);//  92 = '\'
+    printf("Новый путь:");
     print(value);
 
     return 0;
