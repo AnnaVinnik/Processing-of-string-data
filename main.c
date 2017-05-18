@@ -149,6 +149,5 @@ int k = -5, checkRez[2] = {-5, -5}, len, i, scm;
     len = slen(value);
     input(value);
 
-
     return 0;
 }
