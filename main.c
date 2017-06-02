@@ -123,7 +123,7 @@ int i;
     return i;
 }
 
-int stok(char str[], char delim, char *ptr)
+int stok(char str[], char delim, char *ptr[])
 {
 char *suf = str;
 ptr[0] = str; // первое поле – начало str
@@ -135,17 +135,28 @@ int i, j = 1; // j – счетчик полей
             ptr[j] = suf;
             j++;
         }
-printf("j in stock %d \n", j);
     
 return j;
+}
+
+void process(char **ptr)
+{
+int i;
+    for (i = 0; *(ptr[i] - 1) != "e"; i++);
+        if (ptr[i - 1] == 0);
+printf("process: i = %d ; %s \n", i, ptr[5]);
+
 }
 
 int main()
 {
 char value[270] = {0};
-char *ptr, delim = 92, cygdrive[] = "cygdrive";
+char *ptr[10], delim = 92, cygdrive[] = "cygdrive";
 int k = -5, checkRez[2] = {-5, -5}, len, i, scm;
    
     input(value);
+    int j = stok(value, delim, ptr);
+    process(ptr);
+
     return 0;
 }
