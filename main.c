@@ -148,12 +148,7 @@ int k = -5, checkRez[2] = {-5, -5}, len, i, scm;
    
     len = slen(value);
     input(value);
-    int j = stok(value, delim, ptr);
-    //for (i = 0; i < j; i++);
-    if ((scmp(ptr[0], cygdrive)) == 1){
-        //ptr[1][0] = ptr[1][0] - 32;
-        printf("%c\n", value[3]);
-    }
+
 
     return 0;
 }
