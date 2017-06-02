@@ -123,7 +123,7 @@ int i;
     return i;
 }
 
-int stok(char str[], char delim, char *ptr[])
+int stok(char str[], char delim, char *ptr)
 {
 char *suf = str;
 ptr[0] = str; // первое поле – начало str
@@ -143,11 +143,9 @@ return j;
 int main()
 {
 char value[270] = {0};
-char **ptr, delim = '/', cygdrive[] = "cygdrive";
+char *ptr, delim = 92, cygdrive[] = "cygdrive";
 int k = -5, checkRez[2] = {-5, -5}, len, i, scm;
    
-    len = slen(value);
     input(value);
-
     return 0;
 }
