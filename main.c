@@ -129,12 +129,13 @@ char *suf = str;
 ptr[0] = str; // первое поле – начало str
 int i, j = 1; // j – счетчик полей
 
-        for(; (i = schr(suf, delim)) >= 0 ;){
+for(; (i = schr(suf, delim)) >= 0 ;){
             suf[i] = '\0';
             suf = suf + i + 1;
             ptr[j] = suf;
             j++;
         }
+    
 return j;
 }
 
@@ -149,20 +150,37 @@ int i, j;
         }
     }
  
-printf("process: %s  i = %d\n", ptr[number - 1], i);
+printf("process: %s i = %d\n", ptr[number - 1], i);
+
+}
+
+void checkData(char ptr[])
+{
+int i, j = 0, point = 0;
+   /* for (i = 0; ptr[2] != '\0'; i++){
+printf("=)");
+        //if (ptr[2][i] == '.'){
+            point++;
+            j = i;
+printf(":)");
+        }
+    }
+    //for (i = 0; ptr[i] != '
+printf("point = %d j = %d \n", point, j);*/
 
 }
 
 int main()
 {
 char value[270] = {0};
-char *ptr[] = {}, delim = 92, cygdrive[] = "cygdrive";
+char *ptr[20], delim = 92, cygdrive[] = "cygdrive";
 int k = -5, checkRez[2] = {-5, -5}, len, i, scm;
    
     input(value);
     int j = stok(value, delim, ptr);
-
-    process(ptr, j);
+printf("ptr: %s \n", (ptr[2]));
+   // process(ptr, j);
+   // checkData(ptr);
 
     return 0;
 }
