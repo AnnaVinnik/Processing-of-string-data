@@ -135,28 +135,34 @@ int i, j = 1; // j – счетчик полей
             ptr[j] = suf;
             j++;
         }
-    
 return j;
 }
 
-void process(char **ptr)
+void process(char *ptr[], int number)
 {
-int i;
-    for (i = 0; *(ptr[i] - 1) != "e"; i++);
-        if (ptr[i - 1] == 0);
-printf("process: i = %d ; %s \n", i, ptr[5]);
+int i, j;
+    for (i = 0; ptr[number - 1][i] != '\0' ; i++){
+        if ((ptr[number - 1][i] == 'e')  && (ptr[number - 1][i + 1] == 'x') && (ptr[number - 1][i + 2] == 'e')){
+            ptr[number - 1][i] = 'b';
+            ptr[number - 1][i + 1] = 'i';
+            ptr[number - 1][i + 2] = 'n';
+        }
+    }
+ 
+printf("process: %s  i = %d\n", ptr[number - 1], i);
 
 }
 
 int main()
 {
 char value[270] = {0};
-char *ptr[10], delim = 92, cygdrive[] = "cygdrive";
+char *ptr[] = {}, delim = 92, cygdrive[] = "cygdrive";
 int k = -5, checkRez[2] = {-5, -5}, len, i, scm;
    
     input(value);
     int j = stok(value, delim, ptr);
-    process(ptr);
+
+    process(ptr, j);
 
     return 0;
 }
